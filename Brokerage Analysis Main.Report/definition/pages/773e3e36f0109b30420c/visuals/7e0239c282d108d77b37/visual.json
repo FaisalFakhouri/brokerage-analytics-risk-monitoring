@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "7e0239c282d108d77b37",
   "position": {
-    "x": 1112,
-    "y": 80,
+    "x": 1121.4589665653496,
+    "y": 108.93617021276596,
     "z": 6000,
-    "height": 80,
-    "width": 140,
+    "height": 97.264437689969611,
+    "width": 140.06079027355625,
     "tabOrder": 6000
   },
   "visual": {
@@ -170,5 +170,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "50c5e96dd52282aca214",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Total Monitoring Alerts"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

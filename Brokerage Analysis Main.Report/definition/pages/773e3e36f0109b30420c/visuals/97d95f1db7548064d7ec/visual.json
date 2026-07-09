@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "97d95f1db7548064d7ec",
   "position": {
-    "x": 964,
-    "y": 80,
+    "x": 971.67173252279645,
+    "y": 108.93617021276596,
     "z": 5000,
-    "height": 80,
-    "width": 140,
+    "height": 97.264437689969611,
+    "width": 140.06079027355625,
     "tabOrder": 5000
   },
   "visual": {
@@ -170,5 +170,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "4c3b6d16b0e30b2c8000",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "High Risk Accounts"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

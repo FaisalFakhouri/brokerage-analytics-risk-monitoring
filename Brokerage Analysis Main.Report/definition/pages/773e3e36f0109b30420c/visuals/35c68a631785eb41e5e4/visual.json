@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "35c68a631785eb41e5e4",
   "position": {
-    "x": 224,
-    "y": 352,
-    "z": 11001,
-    "height": 160,
-    "width": 500,
-    "tabOrder": 11001
+    "x": 223.70820668693011,
+    "y": 431.85410334346506,
+    "z": 12000,
+    "height": 159.51367781155017,
+    "width": 499.93920972644378,
+    "tabOrder": 12000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -195,75 +195,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "8b996b69069f3c3b59bd",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "account_risk_scores"
-                  }
-                },
-                "Property": "risk_score"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "1f93add14b7dc1f75500",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "account_risk_scores"
-                  }
-                },
-                "Property": "current_equity"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0abe862789753893aeb8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "account_risk_scores"
-              }
-            },
-            "Property": "account_id"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "0e74348e3a222f943871",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "account_risk_scores"
-              }
-            },
-            "Property": "risk_band"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

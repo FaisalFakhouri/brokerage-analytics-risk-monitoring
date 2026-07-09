@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "00732762fbee5e3e6306",
   "position": {
-    "x": 816,
-    "y": 80,
+    "x": 823.82978723404256,
+    "y": 108.93617021276596,
     "z": 4000,
-    "height": 80,
-    "width": 140,
+    "height": 97.264437689969611,
+    "width": 140.06079027355625,
     "tabOrder": 4000
   },
   "visual": {
@@ -170,5 +170,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "c55411d1a2da1099cc88",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Net Trading PnL"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

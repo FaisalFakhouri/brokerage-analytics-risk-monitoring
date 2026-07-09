@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "3f4ee659ff8eb4819246",
   "position": {
-    "x": 568,
-    "y": 176,
-    "z": 11003,
-    "height": 160,
-    "width": 328,
-    "tabOrder": 11003
+    "x": 571.91489361702133,
+    "y": 246.07902735562311,
+    "z": 14000,
+    "height": 159.51367781155017,
+    "width": 327.78115501519756,
+    "tabOrder": 14000
   },
   "visual": {
     "visualType": "columnChart",
@@ -176,42 +176,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2083cb12b5b3482dde5c",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "instruments"
-              }
-            },
-            "Property": "symbol"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "80526164cc9dc896b434",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "trades"
-                  }
-                },
-                "Property": "volume"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

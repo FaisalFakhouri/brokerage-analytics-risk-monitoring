@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "3d3d9f6612ac5be36234",
   "position": {
-    "x": 520,
-    "y": 80,
+    "x": 522.31003039513678,
+    "y": 108.93617021276596,
     "z": 2000,
-    "height": 80,
-    "width": 140,
+    "height": 97.264437689969611,
+    "width": 124.4984802431611,
     "tabOrder": 2000
   },
   "visual": {
@@ -170,5 +170,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "7be25f10c94d35b13af8",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Total Trades"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

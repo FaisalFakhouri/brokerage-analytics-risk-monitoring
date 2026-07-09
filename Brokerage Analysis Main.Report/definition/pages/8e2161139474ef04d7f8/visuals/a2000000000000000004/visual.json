@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a2000000000000000004",
   "position": {
-    "x": 24,
-    "y": 88,
-    "z": 1100,
-    "height": 58,
-    "width": 184,
-    "tabOrder": 4
+    "x": 24.316109422492403,
+    "y": 87.537993920972653,
+    "z": 3000,
+    "height": 80.729483282674778,
+    "width": 183.82978723404256,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "slicer",
@@ -154,7 +154,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "p2f_region",
+        "name": "52a897fe4a7e68d46902",
         "field": {
           "Column": {
             "Expression": {

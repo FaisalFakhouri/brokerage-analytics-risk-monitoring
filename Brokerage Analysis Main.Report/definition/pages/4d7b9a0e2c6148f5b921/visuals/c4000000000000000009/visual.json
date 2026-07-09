@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c4000000000000000009",
   "position": {
-    "x": 224,
-    "y": 80,
-    "z": 1200,
-    "height": 80,
-    "width": 1032,
-    "tabOrder": 9
+    "x": 223.70820668693011,
+    "y": 68.085106382978722,
+    "z": 8000,
+    "height": 96.291793313069917,
+    "width": 1031.9756838905776,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -213,5 +213,93 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "728bfc49bc3ece15df11",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "High Risk Accounts"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1dfab0fa906dbcab51b1",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Critical Risk Accounts"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d7c66b5472400ecb462c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Average Risk Score"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "09aaa68158ec92eacb85",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Worst Drawdown %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "960145fe5e5f6b87946e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Total Equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "121da10fc24dc3d98905",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Account Margin Usage %"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

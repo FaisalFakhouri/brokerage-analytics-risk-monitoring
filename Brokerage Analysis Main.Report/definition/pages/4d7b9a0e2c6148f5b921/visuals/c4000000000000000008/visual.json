@@ -4,10 +4,10 @@
   "position": {
     "x": 24,
     "y": 368,
-    "z": 1104,
+    "z": 7000,
     "height": 58,
     "width": 184,
-    "tabOrder": 8
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -145,23 +145,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "p4f_accountstatus",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

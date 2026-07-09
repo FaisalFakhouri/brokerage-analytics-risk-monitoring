@@ -4,10 +4,10 @@
   "position": {
     "x": 568,
     "y": 176,
-    "z": 1301,
+    "z": 10000,
     "height": 160,
     "width": 328,
-    "tabOrder": 11
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "clusteredBarChart",
@@ -206,51 +206,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "ec1755d4dda6ddc84969",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "dd5a9e9cd66d64b11545",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "ae5a1e47517ad6e23cb5",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Total Accounts"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "ee75de00301562914b20",
   "position": {
-    "x": 912,
-    "y": 176,
+    "x": 908.44984802431611,
+    "y": 246.07902735562311,
     "z": 10000,
-    "height": 160,
-    "width": 344,
+    "height": 159.51367781155017,
+    "width": 343.34346504559272,
     "tabOrder": 10000
   },
   "visual": {
@@ -176,42 +176,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "b57579d86beddca74012",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "account_risk_scores"
-              }
-            },
-            "Property": "risk_band"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "58d60e67ee570d08e702",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "account_risk_scores"
-                  }
-                },
-                "Property": "account_id"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

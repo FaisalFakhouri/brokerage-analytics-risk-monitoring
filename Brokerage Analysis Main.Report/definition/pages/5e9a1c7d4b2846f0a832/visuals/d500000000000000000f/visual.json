@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "d500000000000000000f",
   "position": {
-    "x": 224,
-    "y": 528,
-    "z": 1305,
-    "height": 176,
-    "width": 1032,
-    "tabOrder": 15
+    "x": 224.68085106382981,
+    "y": 543.70820668693011,
+    "z": 13000,
+    "height": 176.048632218845,
+    "width": 1031.9756838905776,
+    "tabOrder": 13000
   },
   "visual": {
     "visualType": "tableEx",
@@ -143,6 +143,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "alerts_unusual_amounts"
+                  }
+                },
+                "Property": "timestamp"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "objects": {

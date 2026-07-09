@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "b3000000000000000009",
   "position": {
-    "x": 224,
-    "y": 80,
-    "z": 1200,
-    "height": 80,
-    "width": 1032,
-    "tabOrder": 9
+    "x": 224.68085106382981,
+    "y": 87.537993920972653,
+    "z": 8000,
+    "height": 80.729483282674778,
+    "width": 1031.9756838905776,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -199,5 +199,79 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "cc5349536bb55b7113b0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Total Trades"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "4e6ec29cadca47b7ace6",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Total Volume"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "e3085e2a4699d8c52321",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Net Trading PnL"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7fd10aa0ce13d51a4aa7",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Win Rate %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "283673e347a0f6068dfa",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Average Trade PnL"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

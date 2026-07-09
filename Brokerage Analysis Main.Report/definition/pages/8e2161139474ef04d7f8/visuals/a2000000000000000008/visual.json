@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a2000000000000000008",
   "position": {
-    "x": 24,
-    "y": 368,
-    "z": 1104,
-    "height": 58,
-    "width": 184,
-    "tabOrder": 8
+    "x": 24.316109422492403,
+    "y": 463.95136778115506,
+    "z": 7000,
+    "height": 83.647416413373861,
+    "width": 183.82978723404256,
+    "tabOrder": 7000
   },
   "visual": {
     "visualType": "slicer",
@@ -154,7 +154,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "p2f_accountstatus",
+        "name": "1a2b9e0e9a1fbcd763a8",
         "field": {
           "Column": {
             "Expression": {

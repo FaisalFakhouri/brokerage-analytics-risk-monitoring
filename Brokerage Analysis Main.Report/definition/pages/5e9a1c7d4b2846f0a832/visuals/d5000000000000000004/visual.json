@@ -4,10 +4,10 @@
   "position": {
     "x": 24,
     "y": 88,
-    "z": 1100,
+    "z": 2000,
     "height": 58,
     "width": 184,
-    "tabOrder": 4
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "slicer",
@@ -145,23 +145,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "p5f_unusualseverity",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "alerts_unusual_amounts"
-              }
-            },
-            "Property": "severity"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

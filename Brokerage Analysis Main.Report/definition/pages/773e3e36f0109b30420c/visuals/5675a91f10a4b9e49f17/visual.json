@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "5675a91f10a4b9e49f17",
   "position": {
-    "x": 372,
-    "y": 80,
+    "x": 374.468085106383,
+    "y": 108.93617021276596,
     "z": 1000,
-    "height": 80,
-    "width": 140,
+    "height": 97.264437689969611,
+    "width": 126.44376899696049,
     "tabOrder": 1000
   },
   "visual": {
@@ -170,5 +170,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0cdad25574f46494bb6a",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Active Clients"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
