@@ -1,0 +1,267 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "d500000000000000000f",
+  "position": {
+    "x": 224,
+    "y": 528,
+    "z": 1305,
+    "height": 176,
+    "width": 1032,
+    "tabOrder": 15
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "client_id"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.client_id",
+              "nativeQueryRef": "client_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "account_id"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.account_id",
+              "nativeQueryRef": "account_id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "timestamp"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.timestamp",
+              "nativeQueryRef": "timestamp"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "severity"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.severity",
+              "nativeQueryRef": "severity"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "rule_code"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.rule_code",
+              "nativeQueryRef": "rule_code"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "payment_method"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.payment_method",
+              "nativeQueryRef": "payment_method"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "amount"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.amount",
+              "nativeQueryRef": "amount"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "z_score"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.z_score",
+              "nativeQueryRef": "z_score"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "alerts_unusual_amounts"
+                    }
+                  },
+                  "Property": "explanation"
+                }
+              },
+              "queryRef": "alerts_unusual_amounts.explanation",
+              "nativeQueryRef": "explanation"
+            }
+          ]
+        }
+      }
+    },
+    "objects": {
+      "columnHeaders": [
+        {
+          "properties": {
+            "columnAdjustment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'growToFit'"
+                }
+              }
+            },
+            "autoSizeColumnWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Investigation Queue - Unusual Amount Alerts'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "transparency": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "border": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "width": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dropShadow": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

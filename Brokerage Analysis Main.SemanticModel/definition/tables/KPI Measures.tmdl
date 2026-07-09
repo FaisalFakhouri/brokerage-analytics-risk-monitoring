@@ -193,6 +193,52 @@ table 'KPI Measures'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: d471327a-dc52-4472-bda4-d8a845f80643
 
+	measure 'Valid Monitoring Alerts' =
+			
+			[Unusual Amount Alerts] + [Rapid Flow Alerts]
+		formatString: 0
+		lineageTag: 5765948b-c67e-4fe8-b365-6f321c94b027
+
+	measure 'High Severity Valid Alerts' =
+			
+			CALCULATE(
+			    COUNTROWS(alerts_unusual_amounts),
+			    alerts_unusual_amounts[severity] = "high"
+			)
+			    + CALCULATE(
+			        COUNTROWS(alerts_rapid_withdrawals),
+			        alerts_rapid_withdrawals[severity] = "high"
+			    )
+		formatString: 0
+		lineageTag: 07464989-841a-418f-bd3c-7b20cfe1610f
+
+	measure 'Affected Alert Clients' =
+			
+			COUNTROWS(
+			    DISTINCT(
+			        UNION(
+			            SELECTCOLUMNS(alerts_unusual_amounts, "client_id", alerts_unusual_amounts[client_id]),
+			            SELECTCOLUMNS(alerts_rapid_withdrawals, "client_id", alerts_rapid_withdrawals[client_id])
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: c36d9640-d367-4680-9a03-fcf0f77606fb
+
+	measure 'Affected Alert Accounts' =
+			
+			COUNTROWS(
+			    DISTINCT(
+			        UNION(
+			            SELECTCOLUMNS(alerts_unusual_amounts, "account_id", alerts_unusual_amounts[account_id]),
+			            SELECTCOLUMNS(alerts_rapid_withdrawals, "account_id", alerts_rapid_withdrawals[account_id_deposit]),
+			            SELECTCOLUMNS(alerts_rapid_withdrawals, "account_id", alerts_rapid_withdrawals[account_id_withdrawal])
+			        )
+			    )
+			)
+		formatString: 0
+		lineageTag: 537f173e-ccf5-483e-ab43-13f063bca91a
+
 	measure 'Risk Account Count' =
 			
 			DISTINCTCOUNT(account_risk_scores[account_id])
