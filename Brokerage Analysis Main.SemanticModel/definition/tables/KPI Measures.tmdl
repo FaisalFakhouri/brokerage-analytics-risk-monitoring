@@ -193,6 +193,12 @@ table 'KPI Measures'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: d471327a-dc52-4472-bda4-d8a845f80643
 
+	measure 'Risk Account Count' =
+			
+			DISTINCTCOUNT(account_risk_scores[account_id])
+		formatString: #,##0
+		lineageTag: a247eaf5-520d-4820-9f79-d988c05b35b8
+
 	measure 'Total Equity' =
 			
 			SUM(accounts[current_equity])
