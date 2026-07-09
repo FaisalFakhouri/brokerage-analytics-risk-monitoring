@@ -98,7 +98,7 @@ table 'KPI Measures'
 	measure 'Worst Drawdown %' =
 			
 			MIN(drawdown_summary[worst_drawdown_pct])
-		formatString: 0.0
+		formatString: 0.0\%
 		lineageTag: c6663985-e68c-4d9c-b892-cd2bdfab7ccf
 
 	measure 'Total Deposits' =

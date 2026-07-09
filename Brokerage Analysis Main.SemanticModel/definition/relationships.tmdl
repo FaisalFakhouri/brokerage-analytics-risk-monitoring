@@ -95,3 +95,11 @@ relationship 88879205-5b76-1e7a-6713-f39d0a1a66d8
 	fromColumn: trades.'Trade Date'
 	toColumn: Date.Date
 
+relationship 'Daily Performance Trading Date to Date'
+	fromColumn: daily_performance.trading_date
+	toColumn: Date.Date
+
+relationship 'Client Instrument Concentration to Instruments'
+	fromColumn: client_instrument_concentration.instrument_id
+	toColumn: instruments.instrument_id
+
