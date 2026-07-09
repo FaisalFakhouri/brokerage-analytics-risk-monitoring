@@ -193,6 +193,27 @@ table 'KPI Measures'
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: d471327a-dc52-4472-bda4-d8a845f80643
 
+	measure 'Total Equity' =
+			
+			SUM(accounts[current_equity])
+		formatString: #,##0.00
+		lineageTag: bde3018e-d5a5-4d29-aece-bae941593000
+
+	measure 'Account Margin Usage %' =
+			
+			DIVIDE(
+			    SUM(accounts[used_margin]),
+			    SUM(accounts[current_equity])
+			)
+		formatString: 0.0%
+		lineageTag: 9b79a7ff-fdfb-4bfe-b338-17967d47b570
+
+	measure 'Net Account PnL' =
+			
+			SUM(accounts[realized_pnl]) + SUM(accounts[unrealized_pnl])
+		formatString: #,##0.00
+		lineageTag: 9e287d3a-f3ab-46f7-8235-253fcd333fb7
+
 	column Value
 		formatString: 0
 		lineageTag: ef078269-fab7-4aa6-96ba-d5e6f21ffebc
