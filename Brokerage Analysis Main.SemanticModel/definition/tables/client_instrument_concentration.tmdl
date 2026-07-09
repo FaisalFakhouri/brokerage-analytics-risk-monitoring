@@ -1,0 +1,86 @@
+table client_instrument_concentration
+	lineageTag: 0c000dc5-ad54-4d27-ad11-0488cbf869a9
+
+	column client_id
+		dataType: string
+		lineageTag: 4974fbe9-a933-436c-9a63-bd7036b5094a
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column instrument_id
+		dataType: string
+		lineageTag: 11ed1fa3-5f62-4787-b032-77428cef7492
+		summarizeBy: none
+		sourceColumn: instrument_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column symbol
+		dataType: string
+		lineageTag: cfdd5eee-32e1-46c6-bf66-4a81763bb77f
+		summarizeBy: none
+		sourceColumn: symbol
+
+		annotation SummarizationSetBy = Automatic
+
+	column asset_class
+		dataType: string
+		lineageTag: 67e36ee3-ca34-4e24-b13e-fa5ddbcaf38c
+		summarizeBy: none
+		sourceColumn: asset_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column instrument_volume
+		dataType: double
+		lineageTag: 74791e3b-b528-4338-b009-93305a7a3446
+		summarizeBy: sum
+		sourceColumn: instrument_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_client_volume
+		dataType: double
+		lineageTag: 066b2f36-ea72-49fe-8610-42dedb046f09
+		summarizeBy: sum
+		sourceColumn: total_client_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column concentration_pct
+		dataType: double
+		lineageTag: 1af1fb54-db83-4d9c-b79c-d49ee91fe041
+		summarizeBy: sum
+		sourceColumn: concentration_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column concentration_flag
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8ac5cf2a-2065-400b-9264-65a153aa92e3
+		summarizeBy: none
+		sourceColumn: concentration_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	partition client_instrument_concentration = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\client_instrument_concentration.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"client_id", type text}, {"instrument_id", type text}, {"symbol", type text}, {"asset_class", type text}, {"instrument_volume", type number}, {"total_client_volume", type number}, {"concentration_pct", type number}, {"concentration_flag", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,178 @@
+table alerts_unusual_amounts
+	lineageTag: 6c1a219c-2fe9-4ff2-a1af-11d49542a45d
+
+	column transaction_id
+		dataType: string
+		lineageTag: 14ffd201-c839-4c2c-8ee6-80962cc8ead5
+		summarizeBy: none
+		sourceColumn: transaction_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: cc2e033b-9a78-4ed8-8ce6-6a6c79a5289b
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: 2b2d45ac-abb6-4c2a-bf3a-d4f7936f8800
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c9078d7a-d560-402d-bcdf-5185be0f46ac
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		variation Variation
+			isDefault
+			relationship: 271695c9-4b41-4933-a751-33325c9b536e
+			defaultHierarchy: LocalDateTable_3c64f9ad-930d-4425-be53-96d3c4e925f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column transaction_type
+		dataType: string
+		lineageTag: 83bc1a57-20a9-49c9-b08b-dd3f3600e802
+		summarizeBy: none
+		sourceColumn: transaction_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: 55993265-22a3-4cea-bdfd-125599f8b6ac
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency
+		dataType: string
+		lineageTag: 8015719f-679c-41c2-97e7-3fec42cdd012
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method
+		dataType: string
+		lineageTag: ea569453-14d0-4802-9a1c-bd95bdb24b81
+		summarizeBy: none
+		sourceColumn: payment_method
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_status
+		dataType: string
+		lineageTag: 111e0c07-f323-461d-b2ef-27419bd667d4
+		summarizeBy: none
+		sourceColumn: transaction_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column processing_fee
+		dataType: double
+		lineageTag: 085f027c-45de-46b0-b5e7-dc8282cde7e1
+		summarizeBy: sum
+		sourceColumn: processing_fee
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reference_id
+		dataType: string
+		lineageTag: 7b4fe8bc-3536-41e0-9f6d-ef545d83e74d
+		summarizeBy: none
+		sourceColumn: reference_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column count
+		dataType: int64
+		formatString: 0
+		lineageTag: 1a63c9fc-2e42-4692-994e-0ffbe7379d53
+		summarizeBy: sum
+		sourceColumn: count
+
+		annotation SummarizationSetBy = Automatic
+
+	column mean
+		dataType: double
+		lineageTag: b9807685-2616-4203-af2b-c78874f7326b
+		summarizeBy: sum
+		sourceColumn: mean
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column std
+		dataType: double
+		lineageTag: 3c811da4-7657-4d47-842c-8a4e348e618d
+		summarizeBy: sum
+		sourceColumn: std
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column z_score
+		dataType: double
+		lineageTag: 48ae6e51-0610-4191-8bfd-16a47ec92792
+		summarizeBy: sum
+		sourceColumn: z_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rule_code
+		dataType: string
+		lineageTag: 53268aa4-b5a1-4a04-ad01-c693c7c5c5e0
+		summarizeBy: none
+		sourceColumn: rule_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: 3766e017-e2ee-4309-907e-82c4b5030bc8
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column explanation
+		dataType: string
+		lineageTag: adf29991-fea5-4240-92c3-27c044f76889
+		summarizeBy: none
+		sourceColumn: explanation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition alerts_unusual_amounts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\alerts_unusual_amounts.csv"),[Delimiter=",", Columns=18, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"transaction_id", type text}, {"client_id", type text}, {"account_id", type text}, {"timestamp", type date}, {"transaction_type", type text}, {"amount", type number}, {"currency", type text}, {"payment_method", type text}, {"transaction_status", type text}, {"processing_fee", type number}, {"reference_id", type text}, {"count", Int64.Type}, {"mean", type number}, {"std", type number}, {"z_score", type number}, {"rule_code", type text}, {"severity", type text}, {"explanation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

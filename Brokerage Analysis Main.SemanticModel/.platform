@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Brokerage Analysis Main"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "63ae66b1-742e-4c9f-87cd-14e600c22661"
+  }
+}

@@ -1,0 +1,240 @@
+table alerts_rapid_withdrawals
+	lineageTag: ac00b448-a102-4edc-8ee7-dfe3d0d32103
+
+	column transaction_id_deposit
+		dataType: string
+		lineageTag: fc213a08-f23e-4fb2-8f1e-cfb3bc2e1627
+		summarizeBy: none
+		sourceColumn: transaction_id_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: 53904106-0793-430f-a1d4-c8886f908a9c
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id_deposit
+		dataType: string
+		lineageTag: 873e68ea-9a25-4d06-9409-fa40aa89299c
+		summarizeBy: none
+		sourceColumn: account_id_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp_deposit
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 58df5ccf-eb56-4264-95f5-8db88f16bbbc
+		summarizeBy: none
+		sourceColumn: timestamp_deposit
+
+		variation Variation
+			isDefault
+			relationship: 8516e291-ab29-435c-b06a-03d834bac074
+			defaultHierarchy: LocalDateTable_d4e88e09-3aca-4510-89aa-07a71c84d3f7.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column transaction_type_deposit
+		dataType: string
+		lineageTag: 995962f8-926c-4a66-a8e2-c6f09c99a811
+		summarizeBy: none
+		sourceColumn: transaction_type_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_deposit
+		dataType: double
+		lineageTag: 2c9cc1d2-dd5b-47b8-854e-53a1e60445fb
+		summarizeBy: sum
+		sourceColumn: amount_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency_deposit
+		dataType: string
+		lineageTag: 572ba072-c28c-4dc8-bd2f-b7214fb0835c
+		summarizeBy: none
+		sourceColumn: currency_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method_deposit
+		dataType: string
+		lineageTag: 9e054fad-083a-4af9-a078-3934fb820840
+		summarizeBy: none
+		sourceColumn: payment_method_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_status_deposit
+		dataType: string
+		lineageTag: d75767dd-fe89-4514-9320-447aaf97e9a3
+		summarizeBy: none
+		sourceColumn: transaction_status_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column processing_fee_deposit
+		dataType: double
+		lineageTag: 1152c65d-f37e-4ad3-b812-56bbdb5c6b9d
+		summarizeBy: sum
+		sourceColumn: processing_fee_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reference_id_deposit
+		dataType: string
+		lineageTag: fb8152af-9be6-4eed-b205-a77fd0284da1
+		summarizeBy: none
+		sourceColumn: reference_id_deposit
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_id_withdrawal
+		dataType: string
+		lineageTag: cdec8e95-6408-49ad-81d0-6b5c0501b00e
+		summarizeBy: none
+		sourceColumn: transaction_id_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id_withdrawal
+		dataType: string
+		lineageTag: 96731ba5-cf4b-4373-883c-c3f748c25d97
+		summarizeBy: none
+		sourceColumn: account_id_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp_withdrawal
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: dc587bf1-48f2-43ef-8c83-326f09c74a46
+		summarizeBy: none
+		sourceColumn: timestamp_withdrawal
+
+		variation Variation
+			isDefault
+			relationship: 833288b9-89c9-4c4b-8bab-e1d520a48bb9
+			defaultHierarchy: LocalDateTable_68b82c99-304b-44df-a07d-30bf093ed6cd.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column transaction_type_withdrawal
+		dataType: string
+		lineageTag: 27046611-e9bd-465f-a59a-5d5fdc23d9e3
+		summarizeBy: none
+		sourceColumn: transaction_type_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount_withdrawal
+		dataType: double
+		lineageTag: cee284dd-ccf3-4329-8446-ec7a49440004
+		summarizeBy: sum
+		sourceColumn: amount_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency_withdrawal
+		dataType: string
+		lineageTag: 948ba6dc-fd75-47ad-9b21-acbe8406feaa
+		summarizeBy: none
+		sourceColumn: currency_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column payment_method_withdrawal
+		dataType: string
+		lineageTag: 68d1f5b4-b415-4b81-a21d-d9a3416aac73
+		summarizeBy: none
+		sourceColumn: payment_method_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column transaction_status_withdrawal
+		dataType: string
+		lineageTag: 85387d1e-3e4b-44e9-99f0-e824ec15d8b6
+		summarizeBy: none
+		sourceColumn: transaction_status_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column processing_fee_withdrawal
+		dataType: double
+		lineageTag: f6211f99-b47e-43e6-82f9-3bb692394ddd
+		summarizeBy: sum
+		sourceColumn: processing_fee_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reference_id_withdrawal
+		dataType: string
+		lineageTag: af264ea7-0068-455d-bd2d-e587aba5ebd6
+		summarizeBy: none
+		sourceColumn: reference_id_withdrawal
+
+		annotation SummarizationSetBy = Automatic
+
+	column hours_between
+		dataType: int64
+		formatString: 0
+		lineageTag: 51721c66-22cb-44f6-830a-97aec312fba0
+		summarizeBy: sum
+		sourceColumn: hours_between
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_code
+		dataType: string
+		lineageTag: 2c233b82-087e-4d17-a908-dec1501385d0
+		summarizeBy: none
+		sourceColumn: rule_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: 41d746c4-9047-4b87-9b45-6a84b3a61a74
+		summarizeBy: none
+		sourceColumn: severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column explanation
+		dataType: string
+		lineageTag: 3ec90c3c-00c1-482d-a65d-f793e1de9037
+		summarizeBy: none
+		sourceColumn: explanation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition alerts_rapid_withdrawals = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\alerts_rapid_withdrawals.csv"),[Delimiter=",", Columns=25, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"transaction_id_deposit", type text}, {"client_id", type text}, {"account_id_deposit", type text}, {"timestamp_deposit", type date}, {"transaction_type_deposit", type text}, {"amount_deposit", type number}, {"currency_deposit", type text}, {"payment_method_deposit", type text}, {"transaction_status_deposit", type text}, {"processing_fee_deposit", type number}, {"reference_id_deposit", type text}, {"transaction_id_withdrawal", type text}, {"account_id_withdrawal", type text}, {"timestamp_withdrawal", type date}, {"transaction_type_withdrawal", type text}, {"amount_withdrawal", type number}, {"currency_withdrawal", type text}, {"payment_method_withdrawal", type text}, {"transaction_status_withdrawal", type text}, {"processing_fee_withdrawal", type number}, {"reference_id_withdrawal", type text}, {"hours_between", Int64.Type}, {"rule_code", type text}, {"severity", type text}, {"explanation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,210 @@
+table 'KPI Measures'
+	lineageTag: 0e98bbee-15c9-437f-bffc-115ea888d976
+
+	measure 'Total Clients' =
+			
+			DISTINCTCOUNT(clients[client_id])
+		formatString: 0
+		lineageTag: 5761f615-ab10-42e8-aa9d-f1d43cb42c16
+
+	measure 'Total Accounts' =
+			
+			DISTINCTCOUNT(accounts[account_id])
+		formatString: 0
+		lineageTag: efa09a76-02e6-4944-acfa-5ba4e9ffcba3
+
+	measure 'Total Trades' =
+			
+			COUNTROWS(trades)
+		formatString: 0
+		lineageTag: 1f4f43a4-85ac-40f4-85cb-34250ecd0d7a
+
+	measure 'Total Volume' =
+			
+			SUM(trades[volume])
+		lineageTag: 664f4d4a-0552-4122-9e77-266b6345a735
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Trading PnL' =
+			
+			SUM(trades[realized_pnl])
+			    + SUM(trades[commission])
+			    + SUM(trades[swap])
+		lineageTag: 00c7ffa1-a03c-4dad-ab1b-cc21d278db42
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Winning Trades' =
+			
+			CALCULATE(
+			    COUNTROWS(trades),
+			    FILTER(
+			        trades,
+			        trades[realized_pnl]
+			            + trades[commission]
+			            + trades[swap] > 0
+			    )
+			)
+		formatString: 0
+		lineageTag: e39ac79b-c736-458a-8f8b-6739a643ea5f
+
+	measure 'Win Rate %' =
+			
+			DIVIDE(
+			    [Winning Trades],
+			    [Total Trades],
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: accbef13-db09-4390-b5b6-8be03815024c
+
+	measure 'Average Trade PnL' =
+			
+			DIVIDE(
+			    [Net Trading PnL],
+			    [Total Trades],
+			    0
+			)
+		lineageTag: 982b6c88-861c-4d7d-b24a-e7e6ec7b71e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'High Risk Accounts' =
+			
+			CALCULATE(
+			    COUNTROWS(account_risk_scores),
+			    account_risk_scores[risk_band] IN {"high", "critical"}
+			)
+		formatString: 0
+		lineageTag: f0978298-6217-4a5f-9d34-620a117dc6f0
+
+	measure 'Critical Risk Accounts' =
+			
+			CALCULATE(
+			    COUNTROWS(account_risk_scores),
+			    account_risk_scores[risk_band] = "critical"
+			)
+		formatString: 0
+		lineageTag: 76b35c6a-ec94-441b-9da9-2ffd6f2570e3
+
+	measure 'Average Risk Score' =
+			
+			AVERAGE(account_risk_scores[risk_score])
+		lineageTag: 366decad-78bd-49ad-a159-0d0509f4b376
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Worst Drawdown %' =
+			
+			MIN(drawdown_summary[worst_drawdown_pct])
+		formatString: 0.0
+		lineageTag: c6663985-e68c-4d9c-b892-cd2bdfab7ccf
+
+	measure 'Total Deposits' =
+			
+			CALCULATE(
+			    SUM(transactions[amount]),
+			    transactions[transaction_type] = "deposit",
+			    transactions[transaction_status] = "completed"
+			)
+		lineageTag: a067c08c-2785-4f78-95a2-2a24c8844851
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Withdrawals' =
+			
+			CALCULATE(
+			    SUM(transactions[amount]),
+			    transactions[transaction_type] = "withdrawal",
+			    transactions[transaction_status] = "completed"
+			)
+		lineageTag: e8300479-5197-4fb1-856f-8b1bca366910
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Net Client Flow' =
+			
+			[Total Deposits] - [Total Withdrawals]
+		lineageTag: 596e5a93-795b-460b-affd-98bf6be95de9
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Unusual Amount Alerts' =
+			
+			COUNTROWS(alerts_unusual_amounts)
+		formatString: 0
+		lineageTag: 24e82e1a-f93b-4ba9-acd5-d94a3b25e173
+
+	measure 'Repeated Failure Alerts' =
+			
+			COUNTROWS(alerts_repeated_failures)
+		formatString: 0
+		lineageTag: 45a92f8e-d2e7-44d2-b40e-535533e26469
+
+	measure 'Rapid Flow Alerts' =
+			
+			COUNTROWS(alerts_rapid_withdrawals)
+		formatString: 0
+		lineageTag: b669097d-ba08-428b-a6f1-59347900481c
+
+	measure 'Total Monitoring Alerts' =
+			
+			[Unusual Amount Alerts]
+			    + [Repeated Failure Alerts]
+			    + [Rapid Flow Alerts]
+		formatString: 0
+		lineageTag: 1f896368-f9a1-45fb-9836-b6b29d01a71f
+
+	measure 'Active Clients' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(clients[client_id]),
+			    clients[client_status] = "active"
+			)
+		formatString: 0
+		lineageTag: 77ae65bc-9aa3-4506-aa4f-5702ea941b8a
+
+	measure 'Concentrated Clients' =
+			
+			CALCULATE(
+			    DISTINCTCOUNT(client_instrument_concentration[client_id]),
+			    client_instrument_concentration[concentration_flag] = TRUE()
+			)
+		formatString: 0
+		lineageTag: 9975bc38-b63d-4ac1-a2d0-94ef8851484b
+
+	measure 'Profitable Accounts' =
+			
+			CALCULATE(
+			    COUNTROWS(account_performance),
+			    account_performance[net_pnl] > 0
+			)
+		formatString: 0
+		lineageTag: f960e471-1f9b-4a46-aae0-931b11e17bd9
+
+	measure 'Profitable Account %' =
+			
+			DIVIDE(
+			    [Profitable Accounts],
+			    COUNTROWS(account_performance),
+			    0
+			)
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: d471327a-dc52-4472-bda4-d8a845f80643
+
+	column Value
+		formatString: 0
+		lineageTag: ef078269-fab7-4aa6-96ba-d5e6f21ffebc
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'KPI Measures' = calculated
+		mode: import
+		source = { BLANK() }
+
+	annotation PBI_Id = 2fe7db0cf5c44ebfaffacfe123df7afe
+

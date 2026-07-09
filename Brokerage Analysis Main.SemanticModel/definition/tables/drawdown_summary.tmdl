@@ -1,0 +1,53 @@
+table drawdown_summary
+	lineageTag: 28965116-8245-44b4-a8d8-daf901176fe9
+
+	column account_id
+		dataType: string
+		lineageTag: b55127d4-0b4e-4a9f-af66-1c8879736d3d
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column worst_drawdown_pct
+		dataType: double
+		lineageTag: 4d5e356a-4541-451f-b85c-5b8503299687
+		summarizeBy: sum
+		sourceColumn: worst_drawdown_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column latest_equity
+		dataType: double
+		lineageTag: 8ea18c2e-178f-465a-8455-5e9352a1a0b2
+		summarizeBy: sum
+		sourceColumn: latest_equity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column peak_equity
+		dataType: double
+		lineageTag: 3c427997-fce2-4b15-a241-e2cbc62dce39
+		summarizeBy: sum
+		sourceColumn: peak_equity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition drawdown_summary = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\drawdown_summary.csv"),[Delimiter=",", Columns=4, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"account_id", type text}, {"worst_drawdown_pct", type number}, {"latest_equity", type number}, {"peak_equity", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

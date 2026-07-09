@@ -1,0 +1,130 @@
+table account_performance
+	lineageTag: a595e4fa-1451-435e-9e8d-6e84109283a4
+
+	column account_id
+		dataType: string
+		lineageTag: 9cd3a406-d58d-4f66-82b1-c667da4f490c
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: 4798eb1c-472a-4366-9b1e-845e50a17129
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column trade_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 5ebcc70f-2c3e-4a03-8944-764cb20830d0
+		summarizeBy: sum
+		sourceColumn: trade_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_volume
+		dataType: double
+		lineageTag: 445d169a-415f-48ef-93d2-d9282a730f1e
+		summarizeBy: sum
+		sourceColumn: total_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_pnl
+		dataType: double
+		lineageTag: 23613ac6-5374-4e14-a782-d4517f0d7dfe
+		summarizeBy: sum
+		sourceColumn: net_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_trade_pnl
+		dataType: double
+		lineageTag: 32224bcb-aaf6-4785-89c6-025fc9a9a5ca
+		summarizeBy: sum
+		sourceColumn: avg_trade_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column win_rate
+		dataType: double
+		lineageTag: decdba38-74dd-4fd5-a142-07469739044a
+		summarizeBy: sum
+		sourceColumn: win_rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_holding_minutes
+		dataType: double
+		lineageTag: 0c85dea4-c04b-443b-b536-b461ceca1cf2
+		summarizeBy: sum
+		sourceColumn: avg_holding_minutes
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_win
+		dataType: double
+		lineageTag: 69a71045-11cb-439f-a992-a0b352e202d5
+		summarizeBy: sum
+		sourceColumn: avg_win
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column avg_loss
+		dataType: double
+		lineageTag: e13200f6-327f-4b8e-8602-d56cfb709d72
+		summarizeBy: sum
+		sourceColumn: avg_loss
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column win_rate_pct
+		dataType: double
+		lineageTag: f53ff083-6e97-4993-a07c-ed01d97b916c
+		summarizeBy: sum
+		sourceColumn: win_rate_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column expectancy
+		dataType: double
+		lineageTag: 12e93ef5-3b85-478c-8746-3b5226aa4de9
+		summarizeBy: sum
+		sourceColumn: expectancy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition account_performance = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\account_performance.csv"),[Delimiter=",", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"account_id", type text}, {"client_id", type text}, {"trade_count", Int64.Type}, {"total_volume", type number}, {"net_pnl", type number}, {"avg_trade_pnl", type number}, {"win_rate", type number}, {"avg_holding_minutes", type number}, {"avg_win", type number}, {"avg_loss", type number}, {"win_rate_pct", type number}, {"expectancy", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

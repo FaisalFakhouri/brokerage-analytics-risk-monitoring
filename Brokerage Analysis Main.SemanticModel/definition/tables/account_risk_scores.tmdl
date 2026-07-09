@@ -1,0 +1,253 @@
+table account_risk_scores
+	lineageTag: 6582f9a9-68aa-4d92-978f-309912a69f7e
+
+	column account_id
+		dataType: string
+		lineageTag: e1441f1c-682e-4314-8167-a9b0386927aa
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: b6a60e64-963d-4453-be7d-19f674fd45fd
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_type
+		dataType: string
+		lineageTag: f060b98b-0987-4663-9c22-73a4a8129a15
+		summarizeBy: none
+		sourceColumn: account_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_open_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8475b533-821f-434f-a8ae-9477bf22a802
+		summarizeBy: none
+		sourceColumn: account_open_date
+
+		variation Variation
+			isDefault
+			relationship: a819f031-ca79-4679-a71a-5e5da74a316c
+			defaultHierarchy: LocalDateTable_dd89f487-0c7d-4c63-9cf2-cbd2c2a206fe.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column account_status
+		dataType: string
+		lineageTag: 76335a76-affb-404a-9b69-683096d27663
+		summarizeBy: none
+		sourceColumn: account_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column leverage
+		dataType: int64
+		formatString: 0
+		lineageTag: 8c649af0-ef6e-4828-abb6-aa4e1780cca2
+		summarizeBy: sum
+		sourceColumn: leverage
+
+		annotation SummarizationSetBy = Automatic
+
+	column base_currency
+		dataType: string
+		lineageTag: ea35d920-cd2f-4441-b750-71aa1ceb234e
+		summarizeBy: none
+		sourceColumn: base_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_balance
+		dataType: double
+		lineageTag: d924c7a7-c374-4043-875d-6c3df019e4d2
+		summarizeBy: sum
+		sourceColumn: current_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_equity
+		dataType: double
+		lineageTag: fe577eb4-90d6-445c-b88d-2eaf52815363
+		summarizeBy: sum
+		sourceColumn: current_equity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column used_margin
+		dataType: double
+		lineageTag: 66dea20b-913f-4f86-8e04-587a2f619885
+		summarizeBy: sum
+		sourceColumn: used_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column free_margin
+		dataType: double
+		lineageTag: 91abab43-da2d-4f23-b38d-0ab12dedeb32
+		summarizeBy: sum
+		sourceColumn: free_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column margin_level
+		dataType: double
+		lineageTag: 6964337b-027c-4896-9688-cd7fa5ae7be1
+		summarizeBy: sum
+		sourceColumn: margin_level
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unrealized_pnl
+		dataType: double
+		lineageTag: 96428e70-44e6-4ad1-be29-8fb70b50e3b3
+		summarizeBy: sum
+		sourceColumn: unrealized_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column realized_pnl
+		dataType: double
+		lineageTag: 8067c383-a103-4b1c-b40d-723840139d74
+		summarizeBy: sum
+		sourceColumn: realized_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column country
+		dataType: string
+		lineageTag: 1f61e2c3-cd77-49b1-b88b-9db6afa00320
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 2268dbb7-7e32-4732-a93b-a3ca65809bc9
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_segment
+		dataType: string
+		lineageTag: 5305af00-dc7c-44e9-a651-3e1fcd1095af
+		summarizeBy: none
+		sourceColumn: client_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_classification
+		dataType: string
+		lineageTag: 47ef5048-ab2e-48fc-b86f-b8aa0556a197
+		summarizeBy: none
+		sourceColumn: risk_classification
+
+		annotation SummarizationSetBy = Automatic
+
+	column margin_usage_ratio
+		dataType: double
+		lineageTag: e0822cb1-33de-4a17-8e06-5c5c2da05b02
+		summarizeBy: sum
+		sourceColumn: margin_usage_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column flag_critical_margin
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2fe42837-bc94-40bb-8f99-b0e9dcff5ab1
+		summarizeBy: none
+		sourceColumn: flag_critical_margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_high_margin
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0e7d6918-2ad6-469b-99df-afbb16c1abf3
+		summarizeBy: none
+		sourceColumn: flag_high_margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_elevated_margin_usage
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5245c85a-f61e-45d6-a35a-607d58adba19
+		summarizeBy: none
+		sourceColumn: flag_elevated_margin_usage
+
+		annotation SummarizationSetBy = Automatic
+
+	column flag_high_leverage
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8783909d-c47b-47d5-9e28-6968d0d1d92e
+		summarizeBy: none
+		sourceColumn: flag_high_leverage
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_score
+		dataType: int64
+		formatString: 0
+		lineageTag: 108bd039-50d2-4bae-9617-6e8bd023fc9c
+		summarizeBy: sum
+		sourceColumn: risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_band
+		dataType: string
+		lineageTag: e80dc3a3-ffdd-443f-b7b1-47c17ca63981
+		summarizeBy: none
+		sourceColumn: risk_band
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_explanation
+		dataType: string
+		lineageTag: 38a24d8c-cbf6-4de0-88f2-9f68731f0d03
+		summarizeBy: none
+		sourceColumn: risk_explanation
+
+		annotation SummarizationSetBy = Automatic
+
+	partition account_risk_scores = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\account_risk_scores.csv"),[Delimiter=",", Columns=26, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"account_id", type text}, {"client_id", type text}, {"account_type", type text}, {"account_open_date", type date}, {"account_status", type text}, {"leverage", Int64.Type}, {"base_currency", type text}, {"current_balance", type number}, {"current_equity", type number}, {"used_margin", type number}, {"free_margin", type number}, {"margin_level", type number}, {"unrealized_pnl", type number}, {"realized_pnl", type number}, {"country", type text}, {"region", type text}, {"client_segment", type text}, {"risk_classification", type text}, {"margin_usage_ratio", type number}, {"flag_critical_margin", type logical}, {"flag_high_margin", type logical}, {"flag_elevated_margin_usage", type logical}, {"flag_high_leverage", type logical}, {"risk_score", Int64.Type}, {"risk_band", type text}, {"risk_explanation", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

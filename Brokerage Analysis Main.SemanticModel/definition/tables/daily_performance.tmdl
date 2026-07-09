@@ -1,0 +1,90 @@
+table daily_performance
+	lineageTag: 3e403077-b12f-4e53-b761-8b1483eb315b
+
+	column trading_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8033c7f5-7f28-419b-bf3b-ff54b1ba2e9b
+		summarizeBy: none
+		sourceColumn: trading_date
+
+		variation Variation
+			isDefault
+			relationship: 681d55cb-d0da-49c5-ba96-025387aa63ce
+			defaultHierarchy: LocalDateTable_05909b93-7e45-4178-9e35-c2fec61ec4ba.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column trade_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f8763d4-3ec4-49bd-a897-238cdf942543
+		summarizeBy: sum
+		sourceColumn: trade_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_volume
+		dataType: double
+		lineageTag: de19336b-046c-4807-abc8-a5d9b75abd19
+		summarizeBy: sum
+		sourceColumn: total_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column net_pnl
+		dataType: double
+		lineageTag: be13817a-fce9-4078-a5e3-2993fc63b8fb
+		summarizeBy: sum
+		sourceColumn: net_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cumulative_pnl
+		dataType: double
+		lineageTag: c67aed1b-8d05-4fc1-b3b7-06712a555b6b
+		summarizeBy: sum
+		sourceColumn: cumulative_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rolling_30d_pnl
+		dataType: double
+		lineageTag: 3d03d461-d48e-4aa9-8856-b3080f4785ec
+		summarizeBy: sum
+		sourceColumn: rolling_30d_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column rolling_30d_volume
+		dataType: double
+		lineageTag: cb7f9122-e92f-42d3-871e-ed058157475a
+		summarizeBy: sum
+		sourceColumn: rolling_30d_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition daily_performance = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\daily_performance.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"trading_date", type date}, {"trade_count", Int64.Type}, {"total_volume", type number}, {"net_pnl", type number}, {"cumulative_pnl", type number}, {"rolling_30d_pnl", type number}, {"rolling_30d_volume", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

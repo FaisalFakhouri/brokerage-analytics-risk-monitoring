@@ -1,0 +1,174 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "35c68a631785eb41e5e4",
+  "position": {
+    "x": 0,
+    "y": 214.95440729483283,
+    "z": 11001,
+    "height": 234.40729483282675,
+    "width": 305.41033434650456,
+    "tabOrder": 11001
+  },
+  "visual": {
+    "visualType": "scatterChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "account_risk_scores"
+                    }
+                  },
+                  "Property": "account_id"
+                }
+              },
+              "queryRef": "account_risk_scores.account_id",
+              "nativeQueryRef": "account_id",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "account_risk_scores"
+                    }
+                  },
+                  "Property": "risk_band"
+                }
+              },
+              "queryRef": "account_risk_scores.risk_band",
+              "nativeQueryRef": "risk_band"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "account_risk_scores"
+                        }
+                      },
+                      "Property": "risk_score"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(account_risk_scores.risk_score)",
+              "nativeQueryRef": "Sum of risk_score",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "account_risk_scores"
+                        }
+                      },
+                      "Property": "current_equity"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(account_risk_scores.current_equity)",
+              "nativeQueryRef": "Sum of current_equity"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8b996b69069f3c3b59bd",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "account_risk_scores"
+                  }
+                },
+                "Property": "risk_score"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "1f93add14b7dc1f75500",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "account_risk_scores"
+                  }
+                },
+                "Property": "current_equity"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "0abe862789753893aeb8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "account_risk_scores"
+              }
+            },
+            "Property": "account_id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "0e74348e3a222f943871",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "account_risk_scores"
+              }
+            },
+            "Property": "risk_band"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}

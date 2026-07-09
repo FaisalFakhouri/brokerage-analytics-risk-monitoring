@@ -1,0 +1,166 @@
+table trades
+	lineageTag: 5025d691-f977-4cf7-a7ab-6660e4e4b19a
+
+	column trade_id
+		dataType: string
+		lineageTag: 54e62c7b-5ed7-421d-8a42-95d4926ebd73
+		summarizeBy: none
+		sourceColumn: trade_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: 3a1af5ae-6793-4b7f-aa86-ea9d6aa4e27e
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column instrument_id
+		dataType: string
+		lineageTag: eff3eee5-d912-43f4-95a1-0bce2e8ca94f
+		summarizeBy: none
+		sourceColumn: instrument_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_timestamp
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b13ee738-cc80-46a5-af1f-9d23252e19b4
+		summarizeBy: none
+		sourceColumn: open_timestamp
+
+		variation Variation
+			isDefault
+			relationship: 55e7a7b1-323e-4d61-9bd6-eb7ee744d412
+			defaultHierarchy: LocalDateTable_4e5ededf-ae69-4660-8b80-7fe9ec9da02a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column close_timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 708c9a52-1be4-40b8-ad56-3231aadbbf6a
+		summarizeBy: none
+		sourceColumn: close_timestamp
+
+		variation Variation
+			isDefault
+			relationship: bc126e8f-9bbc-4781-9bd4-dcbabb60526a
+			defaultHierarchy: LocalDateTable_070a8ccc-d72b-4363-8af1-970ba93d315e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column direction
+		dataType: string
+		lineageTag: 325b44ef-62c3-4252-a9ad-52a35894eabf
+		summarizeBy: none
+		sourceColumn: direction
+
+		annotation SummarizationSetBy = Automatic
+
+	column volume
+		dataType: double
+		lineageTag: c221bd5d-af30-43ca-8494-b963771feabd
+		summarizeBy: sum
+		sourceColumn: volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column open_price
+		dataType: double
+		lineageTag: 2db003bc-181d-4d39-abe9-855b58369edd
+		summarizeBy: sum
+		sourceColumn: open_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column close_price
+		dataType: double
+		lineageTag: 28d3884d-5ed5-4003-bdfa-0a8cc35e07cb
+		summarizeBy: sum
+		sourceColumn: close_price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column realized_pnl
+		dataType: double
+		lineageTag: 7621876d-3556-40c1-997c-4203e67e456c
+		summarizeBy: sum
+		sourceColumn: realized_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column commission
+		dataType: double
+		lineageTag: ea77a40c-254f-41c1-91a2-d0f9dc8b028b
+		summarizeBy: sum
+		sourceColumn: commission
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column swap
+		dataType: double
+		lineageTag: bfd89d50-5180-491e-b2e1-2f2ac6b4e382
+		summarizeBy: sum
+		sourceColumn: swap
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trade_status
+		dataType: string
+		lineageTag: c0ce8279-1706-48af-ac28-347448966b77
+		summarizeBy: none
+		sourceColumn: trade_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column execution_type
+		dataType: string
+		lineageTag: e97dd92e-4680-4788-a0d5-c7c4b0a50b6a
+		summarizeBy: none
+		sourceColumn: execution_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Trade Date' =
+			
+			DATE(
+			    YEAR(trades[open_timestamp]),
+			    MONTH(trades[open_timestamp]),
+			    DAY(trades[open_timestamp])
+			)
+		formatString: General Date
+		lineageTag: f8416323-94ca-442e-8468-23d89281be48
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition trades = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\trades.csv"),[Delimiter=",", Columns=14, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"trade_id", type text}, {"account_id", type text}, {"instrument_id", type text}, {"open_timestamp", type date}, {"close_timestamp", type datetime}, {"direction", type text}, {"volume", type number}, {"open_price", type number}, {"close_price", type number}, {"realized_pnl", type number}, {"commission", type number}, {"swap", type number}, {"trade_status", type text}, {"execution_type", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

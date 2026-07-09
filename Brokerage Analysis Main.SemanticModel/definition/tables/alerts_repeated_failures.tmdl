@@ -1,0 +1,70 @@
+table alerts_repeated_failures
+	lineageTag: a15556e2-a781-4ac0-88db-64744a0bba3b
+
+	column Column1
+		dataType: string
+		lineageTag: f729a35b-e437-4280-bd13-40566484cee2
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: e7319e91-4792-4995-bd05-8dace1f42a5b
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: e6461779-749c-4b62-9ef2-17ed0bc5276b
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 57d7e146-b823-4ecc-b5e4-eb5965ca40d1
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 25db2652-672e-4d65-9a8e-50c8ef7c64c5
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 48b6956e-c1b3-4b4b-bf5a-4dc26393d339
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 8321bf23-fe3b-4de6-b8e2-a1b2f93386fc
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	partition alerts_repeated_failures = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\alerts_repeated_failures.csv"),[Delimiter=",", Columns=7, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}, {"Column6", type text}, {"Column7", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

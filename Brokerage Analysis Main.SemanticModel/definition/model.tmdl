@@ -1,0 +1,44 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["clients","account_performance","account_risk_scores","accounts","alerts_rapid_withdrawals","alerts_repeated_failures","alerts_unusual_amounts","client_instrument_concentration","daily_performance","drawdown_summary","instruments","trades","transactions"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table clients
+ref table DateTableTemplate_d945dfcd-86f2-4050-857d-9cb7342271c9
+ref table LocalDateTable_73e59545-ba3b-4186-9467-88043cbeabc1
+ref table account_performance
+ref table account_risk_scores
+ref table LocalDateTable_dd89f487-0c7d-4c63-9cf2-cbd2c2a206fe
+ref table accounts
+ref table LocalDateTable_5c4461c3-3dc5-4b3b-b5d3-fa992d8a3e2e
+ref table alerts_rapid_withdrawals
+ref table LocalDateTable_d4e88e09-3aca-4510-89aa-07a71c84d3f7
+ref table LocalDateTable_68b82c99-304b-44df-a07d-30bf093ed6cd
+ref table alerts_repeated_failures
+ref table alerts_unusual_amounts
+ref table LocalDateTable_3c64f9ad-930d-4425-be53-96d3c4e925f7
+ref table client_instrument_concentration
+ref table daily_performance
+ref table LocalDateTable_05909b93-7e45-4178-9e35-c2fec61ec4ba
+ref table drawdown_summary
+ref table instruments
+ref table trades
+ref table LocalDateTable_4e5ededf-ae69-4660-8b80-7fe9ec9da02a
+ref table LocalDateTable_070a8ccc-d72b-4363-8af1-970ba93d315e
+ref table transactions
+ref table LocalDateTable_2ed7239f-f68a-48bd-9e5e-fce2e1959b8b
+ref table Date
+ref table LocalDateTable_6676e7e7-f358-4481-81eb-373b2a22bfc0
+ref table 'KPI Measures'
+
+ref cultureInfo en-US
+

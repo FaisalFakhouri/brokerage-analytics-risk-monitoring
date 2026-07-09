@@ -1,0 +1,150 @@
+table accounts
+	lineageTag: 28bda74e-9fab-42df-bfdd-feb1dc9aa5b5
+
+	column account_id
+		dataType: string
+		lineageTag: 5a3fea29-0cf4-480e-967f-eab4fd60f19f
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column client_id
+		dataType: string
+		lineageTag: d43cfdec-d914-46af-8aaa-f8a4e07a38ad
+		summarizeBy: none
+		sourceColumn: client_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_type
+		dataType: string
+		lineageTag: 3aa874e7-4476-48ec-9390-e92c702e74df
+		summarizeBy: none
+		sourceColumn: account_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_open_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 3565a925-2a46-4274-8a64-229c9ad8edfb
+		summarizeBy: none
+		sourceColumn: account_open_date
+
+		variation Variation
+			isDefault
+			relationship: 4fb64fb5-680c-49fa-912b-a3e1962b9205
+			defaultHierarchy: LocalDateTable_5c4461c3-3dc5-4b3b-b5d3-fa992d8a3e2e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column account_status
+		dataType: string
+		lineageTag: 9bf1695b-7630-4643-b737-d056b24b06d9
+		summarizeBy: none
+		sourceColumn: account_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column leverage
+		dataType: int64
+		formatString: 0
+		lineageTag: eec645db-2d1b-453e-9238-f0a9f89f6492
+		summarizeBy: sum
+		sourceColumn: leverage
+
+		annotation SummarizationSetBy = Automatic
+
+	column base_currency
+		dataType: string
+		lineageTag: a64a70af-5e21-4f2f-8e7b-2be114ea60f5
+		summarizeBy: none
+		sourceColumn: base_currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column current_balance
+		dataType: double
+		lineageTag: 2ab4db6c-4626-4fcc-8f16-1e52257912af
+		summarizeBy: sum
+		sourceColumn: current_balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column current_equity
+		dataType: double
+		lineageTag: 413e512f-3023-4ac2-8962-097ee3dd5e00
+		summarizeBy: sum
+		sourceColumn: current_equity
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column used_margin
+		dataType: double
+		lineageTag: 48602240-16d7-4def-aa5b-bd05de2fbbe3
+		summarizeBy: sum
+		sourceColumn: used_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column free_margin
+		dataType: double
+		lineageTag: 6062adf6-d55e-4562-a4c9-64f8b689bb73
+		summarizeBy: sum
+		sourceColumn: free_margin
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column margin_level
+		dataType: double
+		lineageTag: 359a4308-487e-4e9e-8e81-a55496e64d77
+		summarizeBy: sum
+		sourceColumn: margin_level
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column unrealized_pnl
+		dataType: double
+		lineageTag: 99266c79-159e-402a-af00-a529e1e5a990
+		summarizeBy: sum
+		sourceColumn: unrealized_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column realized_pnl
+		dataType: double
+		lineageTag: e96e671c-1c3d-4bda-bea6-9a03fddf5f5c
+		summarizeBy: sum
+		sourceColumn: realized_pnl
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition accounts = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\Faisa\OneDrive\Desktop\brokerage-risk-analytics-clean\outputs\powerbi\accounts.csv"),[Delimiter=",", Columns=14, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"account_id", type text}, {"client_id", type text}, {"account_type", type text}, {"account_open_date", type date}, {"account_status", type text}, {"leverage", Int64.Type}, {"base_currency", type text}, {"current_balance", type number}, {"current_equity", type number}, {"used_margin", type number}, {"free_margin", type number}, {"margin_level", type number}, {"unrealized_pnl", type number}, {"realized_pnl", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,97 @@
+relationship 88eec9af-4123-4e2c-877f-aacf05df8a0c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: clients.account_open_date
+	toColumn: LocalDateTable_73e59545-ba3b-4186-9467-88043cbeabc1.Date
+
+relationship a819f031-ca79-4679-a71a-5e5da74a316c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: account_risk_scores.account_open_date
+	toColumn: LocalDateTable_dd89f487-0c7d-4c63-9cf2-cbd2c2a206fe.Date
+
+relationship 4fb64fb5-680c-49fa-912b-a3e1962b9205
+	joinOnDateBehavior: datePartOnly
+	fromColumn: accounts.account_open_date
+	toColumn: LocalDateTable_5c4461c3-3dc5-4b3b-b5d3-fa992d8a3e2e.Date
+
+relationship 8516e291-ab29-435c-b06a-03d834bac074
+	joinOnDateBehavior: datePartOnly
+	fromColumn: alerts_rapid_withdrawals.timestamp_deposit
+	toColumn: LocalDateTable_d4e88e09-3aca-4510-89aa-07a71c84d3f7.Date
+
+relationship 833288b9-89c9-4c4b-8bab-e1d520a48bb9
+	joinOnDateBehavior: datePartOnly
+	fromColumn: alerts_rapid_withdrawals.timestamp_withdrawal
+	toColumn: LocalDateTable_68b82c99-304b-44df-a07d-30bf093ed6cd.Date
+
+relationship 271695c9-4b41-4933-a751-33325c9b536e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: alerts_unusual_amounts.timestamp
+	toColumn: LocalDateTable_3c64f9ad-930d-4425-be53-96d3c4e925f7.Date
+
+relationship 681d55cb-d0da-49c5-ba96-025387aa63ce
+	joinOnDateBehavior: datePartOnly
+	fromColumn: daily_performance.trading_date
+	toColumn: LocalDateTable_05909b93-7e45-4178-9e35-c2fec61ec4ba.Date
+
+relationship 55e7a7b1-323e-4d61-9bd6-eb7ee744d412
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trades.open_timestamp
+	toColumn: LocalDateTable_4e5ededf-ae69-4660-8b80-7fe9ec9da02a.Date
+
+relationship bc126e8f-9bbc-4781-9bd4-dcbabb60526a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: trades.close_timestamp
+	toColumn: LocalDateTable_070a8ccc-d72b-4363-8af1-970ba93d315e.Date
+
+relationship 176efdc6-9647-4398-99b5-0822a7af8af1
+	joinOnDateBehavior: datePartOnly
+	fromColumn: transactions.timestamp
+	toColumn: LocalDateTable_2ed7239f-f68a-48bd-9e5e-fce2e1959b8b.Date
+
+relationship dc419f33-85e7-4d31-7263-79b80545ee47
+	fromColumn: accounts.client_id
+	toColumn: clients.client_id
+
+relationship 341f5696-dc90-5251-a40c-b17e31aaea86
+	fromColumn: transactions.client_id
+	toColumn: clients.client_id
+
+relationship b2f1b045-d620-4460-99db-8b2cd1e3c7ba
+	fromColumn: trades.account_id
+	toColumn: accounts.account_id
+
+relationship e6aa775c-eee5-b6f9-52ce-03c64de2a1ff
+	fromColumn: trades.instrument_id
+	toColumn: instruments.instrument_id
+
+relationship 24fcc6ef-a0c5-dceb-bfef-7163c3e5a553
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: accounts.account_id
+	toColumn: account_risk_scores.account_id
+
+relationship 84a9104b-7d78-47ee-b799-4f79d195e33a
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: accounts.account_id
+	toColumn: drawdown_summary.account_id
+
+relationship 9e6e5f64-ed1f-0f69-6f59-4678402b7502
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: accounts.account_id
+	toColumn: account_performance.account_id
+
+relationship 3ebaae39-fd7e-f45b-732e-7df4c39f6c20
+	fromColumn: client_instrument_concentration.client_id
+	toColumn: clients.client_id
+
+relationship 71b00326-77d8-4d1d-9855-064d29479b65
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Date.Date
+	toColumn: LocalDateTable_6676e7e7-f358-4481-81eb-373b2a22bfc0.Date
+
+relationship 88879205-5b76-1e7a-6713-f39d0a1a66d8
+	fromColumn: trades.'Trade Date'
+	toColumn: Date.Date
+
