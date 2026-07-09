@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a2fe3370b44df7319b2c",
   "position": {
-    "x": 9.72644376899696,
-    "y": 109.90881458966565,
+    "x": 224,
+    "y": 56,
     "z": 8000,
-    "height": 97.264437689969611,
-    "width": 746.01823708206689,
+    "height": 20,
+    "width": 900,
     "tabOrder": 8000
   },
   "visual": {
@@ -19,9 +19,9 @@
               {
                 "textRuns": [
                   {
-                    "value": "Executive overview of client activity, trading performance, risk exposure, and monitoring alerts",
+                    "value": "Client activity, trading performance, risk exposure, and monitoring alerts",
                     "textStyle": {
-                      "fontSize": "12pt"
+                      "fontSize": "10pt"
                     }
                   }
                 ]
