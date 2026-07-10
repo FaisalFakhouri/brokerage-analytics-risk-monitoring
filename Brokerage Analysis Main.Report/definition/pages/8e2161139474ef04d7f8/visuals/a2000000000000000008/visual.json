@@ -269,23 +269,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1a2b9e0e9a1fbcd763a8",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_status"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

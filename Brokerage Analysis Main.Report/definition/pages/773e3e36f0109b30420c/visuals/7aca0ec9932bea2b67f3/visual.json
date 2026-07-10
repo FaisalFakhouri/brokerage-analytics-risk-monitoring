@@ -247,23 +247,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "2647ad07a6440a618065",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Total Volume"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

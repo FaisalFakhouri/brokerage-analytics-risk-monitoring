@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a6000000000000000001",
   "position": {
-    "x": 224,
-    "y": 18,
-    "z": 1000,
-    "height": 48,
-    "width": 720,
-    "tabOrder": 1000
+    "x": 223.70820668693011,
+    "y": 51.550151975683896,
+    "z": 0,
+    "height": 47.659574468085111,
+    "width": 720.72948328267478,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "textbox",
@@ -21,8 +21,8 @@
                   {
                     "value": "Account Investigation",
                     "textStyle": {
-                      "fontSize": "24pt",
-                      "fontWeight": "bold"
+                      "fontWeight": "bold",
+                      "fontSize": "24pt"
                     }
                   }
                 ]
@@ -32,7 +32,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -174,6 +173,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

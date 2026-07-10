@@ -247,23 +247,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "bfebc515bac69227f9e8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Total Clients"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

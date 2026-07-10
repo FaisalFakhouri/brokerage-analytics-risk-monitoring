@@ -251,23 +251,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "Filtera60000000000000000050000",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "account_risk_scores"
-              }
-            },
-            "Property": "risk_band"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

@@ -247,23 +247,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "c55411d1a2da1099cc88",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Net Trading PnL"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

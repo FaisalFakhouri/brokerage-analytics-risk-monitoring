@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a600000000000000000b",
   "position": {
-    "x": 568,
-    "y": 352,
+    "x": 568.99696048632222,
+    "y": 428.936170212766,
     "z": 10000,
-    "height": 160,
-    "width": 328,
+    "height": 159.51367781155017,
+    "width": 327.78115501519756,
     "tabOrder": 10000
   },
   "visual": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "account_risk_scores"
+                      "Entity": "trades"
                     }
                   },
-                  "Property": "risk_band"
+                  "Property": "direction"
                 }
               },
-              "queryRef": "account_risk_scores.risk_band",
-              "nativeQueryRef": "Risk Band",
+              "queryRef": "trades.direction",
+              "nativeQueryRef": "Direction",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "KPI Measures"
                     }
                   },
-                  "Property": "Average Risk Score"
+                  "Property": "Net Trading PnL"
                 }
               },
-              "queryRef": "KPI Measures.Average Risk Score",
-              "nativeQueryRef": "Avg Risk Score"
+              "queryRef": "KPI Measures.Net Trading PnL",
+              "nativeQueryRef": "Net Trading PnL"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "KPI Measures"
                   }
                 },
-                "Property": "Average Risk Score"
+                "Property": "Net Trading PnL"
               }
             },
             "direction": "Descending"
@@ -171,7 +171,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Risk Score by Band'"
+                  "Value": "'PnL by Trade Direction'"
                 }
               }
             },

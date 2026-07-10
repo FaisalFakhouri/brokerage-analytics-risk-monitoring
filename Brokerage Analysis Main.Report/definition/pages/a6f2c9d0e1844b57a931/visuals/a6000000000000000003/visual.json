@@ -251,23 +251,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "Filtera60000000000000000030000",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_id"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

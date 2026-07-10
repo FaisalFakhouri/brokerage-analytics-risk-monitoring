@@ -269,23 +269,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "1982b6f719ea3ce22b25",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "clients"
-              }
-            },
-            "Property": "client_segment"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

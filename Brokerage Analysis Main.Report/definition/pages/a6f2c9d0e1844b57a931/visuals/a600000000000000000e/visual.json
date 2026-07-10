@@ -1,38 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "a600000000000000000a",
+  "name": "a600000000000000000e",
   "position": {
-    "x": 223.70820668693011,
-    "y": 428.936170212766,
-    "z": 9000,
-    "height": 159.51367781155017,
-    "width": 328.75379939209728,
-    "tabOrder": 9000
+    "x": 960.97264437689978,
+    "y": 49.6048632218845,
+    "z": 13000,
+    "height": 86.565349544072959,
+    "width": 295.68389057750761,
+    "tabOrder": 13000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "cardVisual",
     "query": {
       "queryState": {
-        "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "instruments"
-                    }
-                  },
-                  "Property": "symbol"
-                }
-              },
-              "queryRef": "instruments.symbol",
-              "nativeQueryRef": "Symbol",
-              "active": true
-            }
-          ]
-        },
-        "Y": {
+        "Data": {
           "projections": [
             {
               "field": {
@@ -42,66 +23,49 @@
                       "Entity": "KPI Measures"
                     }
                   },
-                  "Property": "Total Volume"
+                  "Property": "Selected Account"
                 }
               },
-              "queryRef": "KPI Measures.Total Volume",
-              "nativeQueryRef": "Total Volume"
+              "queryRef": "KPI Measures.Selected Account",
+              "nativeQueryRef": "Selected Account"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "KPI Measures"
-                  }
-                },
-                "Property": "Total Volume"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
     "objects": {
-      "dataPoint": [
+      "value": [
         {
           "properties": {
-            "defaultColor": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
                     "Literal": {
-                      "Value": "'#2A7F7F'"
+                      "Value": "'#1F4E79'"
                     }
                   }
                 }
               }
-            }
-          }
-        }
-      ],
-      "categoryAxis": [
-        {
-          "properties": {
-            "fontSize": {
+            },
+            "bold": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "true"
                 }
               }
             }
           }
         }
       ],
-      "valueAxis": [
+      "label": [
         {
           "properties": {
             "fontSize": {
@@ -111,38 +75,7 @@
                 }
               }
             },
-            "gridlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#E8EEF5'"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "legend": [
-        {
-          "properties": {
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'TopCenter'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "labelColor": {
+            "fontColor": {
               "solid": {
                 "color": {
                   "expr": {
@@ -150,6 +83,32 @@
                       "Value": "'#52616B'"
                     }
                   }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "paddingUniform": {
+              "expr": {
+                "Literal": {
+                  "Value": "2D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "shadowCustom": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }
@@ -164,14 +123,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Trading Volume by Instrument'"
+                  "Value": "''"
                 }
               }
             },
@@ -300,5 +259,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "a0a5336c1fd28f7ea408",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Selected Account"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

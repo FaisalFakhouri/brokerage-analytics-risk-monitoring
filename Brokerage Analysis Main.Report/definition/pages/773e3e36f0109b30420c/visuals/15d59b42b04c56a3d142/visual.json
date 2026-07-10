@@ -3,7 +3,7 @@
   "name": "15d59b42b04c56a3d142",
   "position": {
     "x": 223.70820668693011,
-    "y": 18.480243161094226,
+    "y": 38.90577507598784,
     "z": 7000,
     "height": 48.632218844984806,
     "width": 720.72948328267478,
@@ -39,7 +39,6 @@
         }
       ]
     },
-    "drillFilterOtherVisuals": true,
     "visualContainerObjects": {
       "title": [
         {
@@ -154,6 +153,7 @@
           }
         }
       ]
-    }
+    },
+    "drillFilterOtherVisuals": true
   }
 }

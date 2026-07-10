@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "a600000000000000000d",
   "position": {
-    "x": 224,
-    "y": 528,
+    "x": 224.68085106382981,
+    "y": 592.34042553191489,
     "z": 12000,
-    "height": 176,
-    "width": 1032,
+    "height": 100.18237082066869,
+    "width": 1031.9756838905776,
     "tabOrder": 12000
   },
   "visual": {
@@ -431,163 +431,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "4d44ae4ef4bcc44fc676",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_id"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "14eeb0be6e8dd6dcecd7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "clients"
-              }
-            },
-            "Property": "region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "af36ae19e6d8ac88e4a4",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "clients"
-              }
-            },
-            "Property": "client_segment"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "403b09fdc216c6c48459",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "37bb09b116843443cbb3",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "accounts"
-              }
-            },
-            "Property": "account_status"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "5af93fcdd8e70adbb0cf",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "account_risk_scores"
-              }
-            },
-            "Property": "risk_band"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "6da30fd05fcd6fe64651",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "account_risk_scores"
-              }
-            },
-            "Property": "risk_score"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "0f99fa8fd3ee171b5314",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Total Equity"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3d0bd59ee9894c4f6252",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Net Account PnL"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "09b77ffce1637ff63014",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Account Margin Usage %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "b27d8616df559f03bee7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "KPI Measures"
-              }
-            },
-            "Property": "Worst Drawdown %"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -266,6 +266,14 @@ table 'KPI Measures'
 		formatString: #,##0.00
 		lineageTag: 9e287d3a-f3ab-46f7-8235-253fcd333fb7
 
+	measure 'Selected Account' =
+			
+			SELECTEDVALUE(
+			    accounts[account_id],
+			    "Multiple / All Accounts"
+			)
+		lineageTag: 0f9e5c32-6b2e-49a5-b930-bf9b8b250001
+
 	column Value
 		formatString: 0
 		lineageTag: ef078269-fab7-4aa6-96ba-d5e6f21ffebc
