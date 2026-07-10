@@ -2,7 +2,7 @@
 
 A six-page Power BI portfolio project focused on brokerage analytics, trading performance, account risk monitoring, compliance alert review, and account-level investigation.
 
-**Built by Faisal Fakhouri**
+**Sole Author, Designer & Developer: Faisal Fakhouri**
 
 > Portfolio project. The data and scenarios represented in this repository are intended for demonstration and analytical purposes.
 
@@ -78,6 +78,6 @@ Power BI · DAX · Data Modeling · Business Intelligence · Financial Analytics
 ## Author
 
 **Faisal Fakhouri**  
-Designer and builder of the Brokerage Analytics & Risk Monitoring Platform.
+Faisal Fakhouri is the sole author, designer, and developer of the Brokerage Analytics & Risk Monitoring Platform.
 
 See `COPYRIGHT_AND_USAGE.md` for attribution and usage information.
