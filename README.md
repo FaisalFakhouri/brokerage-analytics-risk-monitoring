@@ -38,6 +38,55 @@ This turns the project from a collection of static dashboard pages into a practi
 - Six-page analytical report architecture
 - Git-based version history and iterative development
 
+## Dashboard Showcase
+
+### 1. Executive Overview
+
+A high-level view of brokerage activity, combining core business KPIs, client distribution, instrument activity, risk segmentation, equity-versus-risk analysis, and trading PnL trends.
+
+![Executive Overview](docs/images/01-executive-overview.png)
+
+### 2. Client & Account Analysis
+
+Analyzes client segmentation, account composition, net client flow, regional equity, margin usage, and accounts requiring management attention.
+
+![Client and Account Analysis](docs/images/02-client-account-analysis.png)
+
+### 3. Trading Performance
+
+Provides detailed analysis of trading activity and profitability through trade volume, net PnL, win rate, average trade PnL, instrument-level performance, directional comparison, and performance trends.
+
+![Trading Performance](docs/images/03-trading-performance.png)
+
+### 4. Risk Monitoring
+
+Focuses on account risk through risk-band distribution, risk scores, margin pressure, drawdown, regional exposure, and a detailed Risk Review Queue.
+
+![Risk Monitoring](docs/images/04-risk-monitoring.png)
+
+### 5. Alerts & Compliance
+
+Examines monitoring alerts by severity, rule category, payment method, client concentration, and rapid-withdrawal timing, supported by a detailed investigation queue.
+
+![Alerts and Compliance](docs/images/05-alerts-compliance.png)
+
+### 6. Account Investigation
+
+The investigation page provides focused account-level analysis across equity, account PnL, margin usage, risk score, drawdown, trading activity, instrument concentration, and directional profitability.
+
+![Account Investigation Overview](docs/images/06-account-investigation-overview.png)
+
+### Drill-through Investigation Workflow
+
+Accounts identified in the Management Attention List or Risk Review Queue can be opened through Power BI drill-through. The Account Investigation page receives the selected `account_id` context and recalculates connected KPIs and visuals for that account.
+
+![Account Investigation Drillthrough](docs/images/07-account-investigation-drillthrough.png)
+
+The detailed investigation view supports deeper review of account activity, performance, risk characteristics, and trading behavior.
+
+![Account Investigation Details](docs/images/08-account-investigation-details.png)
+
+---
 ## Business Questions Addressed
 
 - Where are clients and accounts concentrated?
