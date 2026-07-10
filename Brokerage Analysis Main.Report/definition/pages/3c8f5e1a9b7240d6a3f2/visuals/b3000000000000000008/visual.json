@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "b3000000000000000008",
   "position": {
-    "x": 24,
-    "y": 368,
+    "x": 23.343465045592705,
+    "y": 454.22492401215806,
     "z": 7000,
-    "height": 58,
-    "width": 184,
+    "height": 73.9209726443769,
+    "width": 183.82978723404256,
     "tabOrder": 7000
   },
   "visual": {
@@ -269,5 +269,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "27105ffc42c717cd083f",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "trades"
+              }
+            },
+            "Property": "direction"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

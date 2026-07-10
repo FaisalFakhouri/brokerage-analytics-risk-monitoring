@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c4000000000000000008",
   "position": {
-    "x": 24,
-    "y": 368,
+    "x": 24.316109422492403,
+    "y": 462.97872340425533,
     "z": 7000,
-    "height": 58,
-    "width": 184,
+    "height": 65.167173252279639,
+    "width": 183.82978723404256,
     "tabOrder": 7000
   },
   "visual": {
@@ -264,5 +264,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "ef586181d980260e7070",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "accounts"
+              }
+            },
+            "Property": "account_status"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

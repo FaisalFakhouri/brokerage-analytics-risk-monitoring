@@ -389,5 +389,121 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2cb5273b136311584a44",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "clients"
+              }
+            },
+            "Property": "region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a655be16e1e472343889",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "clients"
+              }
+            },
+            "Property": "client_segment"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c9a3d52634ecf4200a65",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "accounts"
+              }
+            },
+            "Property": "account_id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "108a948aceb626ce3396",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "accounts"
+              }
+            },
+            "Property": "account_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "20bea27457723b76ab67",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Total Equity"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d990ee3845e12ab2063c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Account Margin Usage %"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "dd91933ece22bb21dc26",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "KPI Measures"
+              }
+            },
+            "Property": "Net Account PnL"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "ffe18372636cb386412b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "account_risk_scores"
+              }
+            },
+            "Property": "risk_band"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

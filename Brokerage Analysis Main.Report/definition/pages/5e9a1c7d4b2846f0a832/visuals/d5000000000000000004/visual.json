@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "d5000000000000000004",
   "position": {
-    "x": 24,
-    "y": 88,
+    "x": 24.316109422492403,
+    "y": 98.2370820668693,
     "z": 2000,
-    "height": 58,
-    "width": 184,
+    "height": 72.948328267477208,
+    "width": 183.82978723404256,
     "tabOrder": 2000
   },
   "visual": {
@@ -264,5 +264,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "43107432a060b751e4eb",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "alerts_unusual_amounts"
+              }
+            },
+            "Property": "severity"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

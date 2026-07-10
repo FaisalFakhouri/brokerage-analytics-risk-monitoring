@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "c4000000000000000006",
   "position": {
-    "x": 24,
-    "y": 228,
+    "x": 24.316109422492403,
+    "y": 265.53191489361706,
     "z": 5000,
-    "height": 58,
-    "width": 184,
+    "height": 71.00303951367782,
+    "width": 183.82978723404256,
     "tabOrder": 5000
   },
   "visual": {
@@ -269,5 +269,23 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "71caaaf391a3587f7ab9",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "account_risk_scores"
+              }
+            },
+            "Property": "risk_band"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
